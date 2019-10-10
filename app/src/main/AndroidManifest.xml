@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.remych04.dtf">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".DtfApplication"
         android:allowBackup="true"
