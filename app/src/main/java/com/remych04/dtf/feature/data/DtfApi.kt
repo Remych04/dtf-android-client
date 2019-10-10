@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface DtfApi {
 
-    @GET("/job")
+    @GET("job")
     fun getJob(): Call<ResponseBody>
 }
