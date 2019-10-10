@@ -7,7 +7,14 @@ import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 
 @AppScope
-@Component(modules = [AndroidInjectionModule::class, MainModule::class])
+@Component(
+    modules = [
+        AndroidInjectionModule::class,
+        MainModule::class,
+        NetworkModule::class,
+        BaseModule::class
+    ]
+)
 interface AppComponent : AndroidInjector<DtfApplication> {
 
     @Component.Factory
