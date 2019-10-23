@@ -7,10 +7,9 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-object BaseModule {
+class BaseModule {
 
     @Provides
     @AppScope
-    @JvmStatic
     fun getContext(application: DtfApplication): Context = application
 }
