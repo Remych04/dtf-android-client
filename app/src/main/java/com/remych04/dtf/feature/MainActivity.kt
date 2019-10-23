@@ -4,18 +4,17 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.remych04.dtf.R
-import com.remych04.dtf.feature.data.DtfApi
+import com.remych04.dtf.feature.domain.DtfUseCase
 import dagger.android.AndroidInjection
-import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var api: DtfApi
+    lateinit var api: DtfUseCase
+
+    private var job: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -25,15 +24,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        api.getJob().enqueue(object : Callback<ResponseBody> {
 
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-               Log.e("asd123", t.localizedMessage)
+        job = CoroutineScope(Dispatchers.IO).launch {
+            val result = api.getData()
+            withContext(Dispatchers.Main) {
+                Log.d("asd123", result.string())
             }
+        }
+    }
 
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                Log.d("asd123", response.message())
-            }
-        })
+    override fun onDestroy() {
+        job?.cancel()
+        super.onDestroy()
     }
 }
