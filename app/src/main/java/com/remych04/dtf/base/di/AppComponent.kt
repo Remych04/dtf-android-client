@@ -2,6 +2,7 @@ package com.remych04.dtf.base.di
 
 import com.remych04.dtf.DtfApplication
 import com.remych04.dtf.base.di.scope.AppScope
+import com.remych04.dtf.base.di.viewmodel.ViewModelFactoryModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -10,6 +11,7 @@ import dagger.android.AndroidInjector
 @Component(
     modules = [
         AndroidInjectionModule::class,
+        ViewModelFactoryModule::class,
         MainModule::class,
         NetworkModule::class,
         BaseModule::class
