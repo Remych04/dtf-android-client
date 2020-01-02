@@ -1,13 +1,13 @@
 package com.remych04.dtf.base.di
 
 import com.remych04.dtf.DtfApplication
-import com.remych04.dtf.base.di.scope.AppScope
 import com.remych04.dtf.base.di.viewmodel.ViewModelFactoryModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import javax.inject.Singleton
 
-@AppScope
+@Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,
