@@ -1,4 +1,4 @@
-package com.remych04.dtf.feature
+package com.remych04.dtf.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
