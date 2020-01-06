@@ -2,27 +2,23 @@ package com.remych04.dtf.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.remych04.dtf.R
-import com.remych04.dtf.base.viewmodel.injectViewModel
-import com.remych04.dtf.feature.domain.NewsListViewModel
-import dagger.android.AndroidInjection
-import javax.inject.Inject
+import com.remych04.dtf.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    lateinit var demoViewModel: NewsListViewModel
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        demoViewModel = injectViewModel(viewModelFactory)
-    }
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onResume() {
-        super.onResume()
+        val host: NavHostFragment = supportFragmentManager
+            .findFragmentById(R.id.navigation_host_fragment) as NavHostFragment? ?: return
+
+        binding.bottomNavView.setupWithNavController(host.navController)
     }
 }

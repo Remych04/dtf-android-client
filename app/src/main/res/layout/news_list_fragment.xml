@@ -4,10 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/news_list_recycler"
+    <TextView
+        android:text="ЛИСТ НОВОСТЕЙ"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/news_item" />
+        android:layout_height="wrap_content"/>
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/news_list_recycler"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:listitem="@layout/news_item" />-->
 
 </FrameLayout>
