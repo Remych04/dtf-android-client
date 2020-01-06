@@ -1,6 +1,7 @@
 package com.remych04.dtf.base.di
 
 import com.remych04.dtf.DtfApplication
+import com.remych04.dtf.feature.di.NewsListModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -11,7 +12,9 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         NetworkModule::class,
-        BaseModule::class
+        DtfApiModule::class,
+        BaseModule::class,
+        NewsListModule::class
     ]
 )
 interface AppComponent : AndroidInjector<DtfApplication> {

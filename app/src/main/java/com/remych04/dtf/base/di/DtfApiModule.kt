@@ -1,13 +1,12 @@
-package com.remych04.dtf.feature.di
+package com.remych04.dtf.base.di
 
 import com.remych04.dtf.base.di.scope.ActivityScope
-import com.remych04.dtf.base.di.viewmodel.ViewModelModule
 import com.remych04.dtf.feature.data.DtfApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 
-@Module(includes = [ViewModelModule::class])
+@Module
 class DtfApiModule {
 
     @Provides
