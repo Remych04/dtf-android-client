@@ -1,4 +1,4 @@
-package com.remych04.dtf.base.viewmodel
+package com.remych04.dtf.base.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

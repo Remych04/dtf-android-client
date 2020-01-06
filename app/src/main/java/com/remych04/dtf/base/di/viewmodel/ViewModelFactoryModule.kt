@@ -1,7 +1,6 @@
 package com.remych04.dtf.base.di.viewmodel
 
 import androidx.lifecycle.ViewModelProvider
-import com.remych04.dtf.base.viewmodel.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 
