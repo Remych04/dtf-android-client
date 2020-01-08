@@ -1,4 +1,4 @@
-package com.remych04.dtf.feature
+package com.remych04.dtf.feature.newslist.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.remych04.dtf.base.DaggerFragment
 import com.remych04.dtf.databinding.NewsListFragmentBinding
+import com.remych04.dtf.feature.newslist.domain.NewsListViewModel
 import javax.inject.Inject
 
 class NewsListFragment : DaggerFragment() {

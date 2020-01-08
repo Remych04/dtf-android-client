@@ -5,6 +5,6 @@
 
     <fragment
         android:id="@+id/newsListFragment"
-        android:name="com.remych04.dtf.feature.NewsListFragment"
+        android:name="com.remych04.dtf.feature.newslist.view.NewsListFragment"
         android:label="NewsListFragment" />
 </navigation>

@@ -1,7 +1,7 @@
 package com.remych04.dtf.base.di
 
 import com.remych04.dtf.DtfApplication
-import com.remych04.dtf.feature.di.NewsListModule
+import com.remych04.dtf.feature.newslist.di.NewsListModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector

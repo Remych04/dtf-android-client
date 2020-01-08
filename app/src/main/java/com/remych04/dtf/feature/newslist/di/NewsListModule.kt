@@ -1,10 +1,10 @@
-package com.remych04.dtf.feature.di
+package com.remych04.dtf.feature.newslist.di
 
 import androidx.lifecycle.ViewModel
 import com.remych04.dtf.base.di.viewmodel.ViewModelFactoryModule
 import com.remych04.dtf.base.di.viewmodel.ViewModelKey
-import com.remych04.dtf.feature.NewsListFragment
-import com.remych04.dtf.feature.NewsListViewModel
+import com.remych04.dtf.feature.newslist.domain.NewsListViewModel
+import com.remych04.dtf.feature.newslist.view.NewsListFragment
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
