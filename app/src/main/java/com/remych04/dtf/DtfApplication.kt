@@ -7,7 +7,6 @@ import dagger.android.HasAndroidInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-
 class DtfApplication : MultiDexApplication(), HasAndroidInjector {
     @Inject
     lateinit var injector: DispatchingAndroidInjector<Any>
