@@ -1,5 +1,7 @@
 package com.remych04.dtf.base.di
 
+import android.content.Context
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.remych04.dtf.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -33,9 +35,13 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun getOkhttp(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
+    fun getChucker(context: Context) = ChuckerInterceptor(context)
+
+    @Singleton
+    @Provides
+    fun getOkhttp(chuckerInterceptor: ChuckerInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(chuckerInterceptor)
             .build()
     }
 
