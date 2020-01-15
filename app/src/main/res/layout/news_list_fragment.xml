@@ -2,18 +2,24 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/test_text"
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/news_list_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:elevation="4dp"-->
+<!--        android:theme="@style/Widget.MaterialComponents.Toolbar"-->
+<!--        app:popupTheme="@style/Widget.MaterialComponents.Toolbar"/>-->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/news_list_recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ЛИСТ НОВОСТЕЙ" />
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/news_list_recycler"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        tools:listitem="@layout/news_item" />-->
+        android:layout_height="match_parent"
+        android:background="@color/colorThemePrimaryDark"
+        tools:listitem="@layout/news_item" />
 
 </FrameLayout>

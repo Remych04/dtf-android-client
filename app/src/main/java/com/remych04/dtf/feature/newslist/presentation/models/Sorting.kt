@@ -1,4 +1,4 @@
-package com.remych04.dtf.feature.newslist.domain.models
+package com.remych04.dtf.feature.newslist.presentation.models
 
 enum class Sorting {
     RECENT,

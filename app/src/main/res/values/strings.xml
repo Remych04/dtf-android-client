@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DTFApplication</string>
+    <string name="app_name">DTF</string>
 
     <string name="bottom_nav_news_list_title">Новости</string>
     <string name="bottom_nav_news_category_title">Категории</string>

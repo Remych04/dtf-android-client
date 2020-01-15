@@ -1,4 +1,4 @@
-package com.remych04.dtf.feature.newslist.domain
+package com.remych04.dtf.feature.newslist.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -7,13 +7,12 @@ import com.remych04.dtf.base.utils.CustomLiveData
 import com.remych04.dtf.base.utils.State
 import com.remych04.dtf.feature.newslist.data.DtfApi
 import com.remych04.dtf.feature.newslist.data.models.NewsList
-import com.remych04.dtf.feature.newslist.domain.models.Category
-import com.remych04.dtf.feature.newslist.domain.models.Sorting
+import com.remych04.dtf.feature.newslist.presentation.models.Category
+import com.remych04.dtf.feature.newslist.presentation.models.Sorting
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 
-class NewsListViewModel @Inject constructor(private val api: DtfApi) : ViewModel() {
+class NewsListViewModel(private val api: DtfApi) : ViewModel() {
 
     private val customLiveData = CustomLiveData<State<List<NewsList>>>()
     private val state = State<List<NewsList>>()

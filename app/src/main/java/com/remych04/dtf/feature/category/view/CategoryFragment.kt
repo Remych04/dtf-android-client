@@ -4,18 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
 import com.remych04.dtf.databinding.CategoryFragmentBinding
-import com.remych04.dtf.feature.category.domain.CategoryViewModel
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
 
-class CategoryFragment : DaggerFragment() {
+class CategoryFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel by viewModels<CategoryViewModel> { viewModelFactory }
+//    @Inject
+//    lateinit var viewModelFactory: ViewModelProvider.Factory
+//    private val viewModel by viewModels<CategoryViewModel> { viewModelFactory }
 
     private lateinit var binding: CategoryFragmentBinding
 
