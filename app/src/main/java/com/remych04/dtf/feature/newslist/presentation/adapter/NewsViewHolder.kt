@@ -7,6 +7,7 @@ import com.remych04.dtf.feature.newslist.data.models.NewsList
 class NewsViewHolder(private val binding: NewsItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(newsList: NewsList) {
-        binding.itemText.text = newsList.title
+        binding.headerText.text = newsList.title
+        binding.labelText.text = newsList.intro
     }
 }
