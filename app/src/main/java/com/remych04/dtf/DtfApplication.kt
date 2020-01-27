@@ -1,6 +1,7 @@
 package com.remych04.dtf
 
 import androidx.multidex.MultiDexApplication
+import com.remych04.dtf.base.module.baseModule
 import com.remych04.dtf.base.module.networkModule
 import com.remych04.dtf.feature.newslist.module.newsListModule
 import org.koin.android.ext.koin.androidContext
@@ -17,7 +18,7 @@ class DtfApplication : MultiDexApplication() {
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@DtfApplication)
-            modules(listOf(networkModule, newsListModule))
+            modules(listOf(baseModule, networkModule, newsListModule))
         }
         initTimber()
     }

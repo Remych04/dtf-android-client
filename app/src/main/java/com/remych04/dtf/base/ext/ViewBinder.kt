@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import timber.log.Timber
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
@@ -14,6 +15,7 @@ fun <T> Fragment.viewLifecycle(): ReadWriteProperty<Fragment, T> =
         private var binding: T? = null
 
         init {
+            Timber.d("asd123 binder init")
             // Observe the View Lifecycle of the Fragment
             // * See Gist for full code *
             this@viewLifecycle
@@ -23,6 +25,7 @@ fun <T> Fragment.viewLifecycle(): ReadWriteProperty<Fragment, T> =
 
         @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
         fun onDestroy() {
+            Timber.d("asd123 binder destroy")
             // Clear out backing property just before onDestroyView
             binding = null
         }
@@ -31,6 +34,7 @@ fun <T> Fragment.viewLifecycle(): ReadWriteProperty<Fragment, T> =
             thisRef: Fragment,
             property: KProperty<*>
         ): T {
+            Timber.d("asd123 binder getValue")
             // Return the backing property if it's set
             return this.binding!!
         }
@@ -40,6 +44,7 @@ fun <T> Fragment.viewLifecycle(): ReadWriteProperty<Fragment, T> =
             property: KProperty<*>,
             value: T
         ) {
+            Timber.d("asd123 binder setValue")
             // Set the backing property
             this.binding = value
         }

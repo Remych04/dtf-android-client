@@ -2,17 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/nav_graph.xml"
     app:startDestination="@id/news_list_fragment">
 
     <fragment
         android:id="@+id/news_list_fragment"
         android:name="com.remych04.dtf.feature.newslist.presentation.NewsListFragment"
-        android:label="NewsListFragment"
-        tools:layout="@layout/news_list_fragment"/>
+        android:label="@string/nav_news_list"
+        tools:layout="@layout/news_list_fragment" />
     <fragment
         android:id="@+id/category_fragment"
         android:name="com.remych04.dtf.feature.category.view.CategoryFragment"
-        android:label="CategoryFragment"
-        tools:layout="@layout/category_fragment"/>
+        android:label="@string/nav_category" />
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.remych04.dtf.feature.profile.ProfileFragment"
+        android:label="@string/nav_profile"
+        tools:layout="@layout/profile_fragment" />
 </navigation>

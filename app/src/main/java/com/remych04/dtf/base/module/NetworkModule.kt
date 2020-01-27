@@ -27,7 +27,6 @@ fun provideMoshiConverter(): MoshiConverterFactory {
 
 fun provideOkHttp(chuckerInterceptor: ChuckerInterceptor): OkHttpClient {
     return OkHttpClient.Builder()
-        .addInterceptor(chuckerInterceptor)
         .build()
 }
 

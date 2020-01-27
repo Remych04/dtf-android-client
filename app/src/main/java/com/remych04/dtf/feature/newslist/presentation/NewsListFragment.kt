@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.remych04.dtf.base.ext.viewLifecycle
 import com.remych04.dtf.databinding.NewsListFragmentBinding
 import com.remych04.dtf.feature.newslist.data.models.NewsList
 import com.remych04.dtf.feature.newslist.presentation.adapter.NewsListAdapter
@@ -17,13 +16,15 @@ import timber.log.Timber
 class NewsListFragment : Fragment() {
 
     private val newsListViewModel: NewsListViewModel by viewModel()
-    private var binding: NewsListFragmentBinding by viewLifecycle()
+    private var _binding: NewsListFragmentBinding? = null
+    private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = NewsListFragmentBinding.inflate(inflater, container, false)
+        _binding = NewsListFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -41,5 +42,10 @@ class NewsListFragment : Fragment() {
                 newslistAdapter.setData(state.success as List<NewsList>)
             }
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
