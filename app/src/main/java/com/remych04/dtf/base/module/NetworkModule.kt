@@ -2,6 +2,7 @@ package com.remych04.dtf.base.module
 
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.remych04.dtf.feature.newslist.data.DtfApi
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
@@ -15,6 +16,7 @@ val networkModule = module {
     single { provideMoshiConverter() }
     single { provideOkHttp(get()) }
     single { provideRetrofit(get(), get()) }
+    single { provideDtfApi(get()) }
 }
 
 fun provideChucker(context: Context): ChuckerInterceptor {
@@ -27,7 +29,6 @@ fun provideMoshiConverter(): MoshiConverterFactory {
 
 fun provideOkHttp(chuckerInterceptor: ChuckerInterceptor): OkHttpClient {
     return OkHttpClient.Builder()
-        .addInterceptor(chuckerInterceptor)
         .build()
 }
 
@@ -40,4 +41,8 @@ fun provideRetrofit(
         .addConverterFactory(moshiConverterFactory)
         .client(okHttpClient)
         .build()
+}
+
+fun provideDtfApi(retrofit: Retrofit): DtfApi {
+    return retrofit.create(DtfApi::class.java)
 }
