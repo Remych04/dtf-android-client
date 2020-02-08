@@ -1,6 +1,6 @@
 package com.remych04.dtf
 
-import androidx.multidex.MultiDexApplication
+import android.app.Application
 import com.remych04.dtf.base.module.baseModule
 import com.remych04.dtf.base.module.networkModule
 import com.remych04.dtf.feature.newslist.module.newsListModule
@@ -10,7 +10,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import timber.log.Timber
 
-class DtfApplication : MultiDexApplication() {
+class DtfApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
